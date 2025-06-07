@@ -32,12 +32,7 @@ We apply this approach to classify **chest X-ray images** for **pneumonia detect
 
 ### 🧮 Decision Fusion
 
-- Final prediction is made by aggregating the output probabilities from all CNNs using the **Sum Rule**:
-  
-  \[
-  p_i = \frac{1}{9} \sum_{j=0}^{8} p_{ij}
-  \]
-
+- Final prediction is made by aggregating the output probabilities from all CNNs using the **Sum of Probabilities (SMP) Rule**:
 - A custom threshold of **0.4** is used for final classification.
 
 ---
