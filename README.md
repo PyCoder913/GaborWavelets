@@ -54,6 +54,33 @@ We apply this approach to classify **chest X-ray images** for **pneumonia detect
 
 ---
 
+## 🧠 Trained Models
+
+The repository includes a [`models/`](./models) folder, that contains the **9 trained CNN models** used in this project. These models are saved as `final_model_0.h5` to `final_model_9.h5`.
+
+Each model corresponds to a CNN trained on a specific representation of the input image:
+
+- `final_model_0.h5` is trained on the **original image** (no Gabor transformation).
+- `final_model_1.h5` to `final_model_8.h5` are trained on **Gabor-transformed images**, each filtered at a specific orientation.
+
+### 📐 Orientation Mapping
+
+| Model File          | Description                        | Gabor Filter Orientation |
+|---------------------|------------------------------------|---------------------------|
+| `final_model_0.h5`  | Trained on original input image     | None                      |
+| `final_model_1.h5`  | Trained on Gabor-transformed image  | 0°                        |
+| `final_model_2.h5`  | Trained on Gabor-transformed image  | 22.5°                     |
+| `final_model_3.h5`  | Trained on Gabor-transformed image  | 45°                       |
+| `final_model_4.h5`  | Trained on Gabor-transformed image  | 67.5°                     |
+| `final_model_5.h5`  | Trained on Gabor-transformed image  | 90°                       |
+| `final_model_6.h5`  | Trained on Gabor-transformed image  | 112.5°                    |
+| `final_model_7.h5`  | Trained on Gabor-transformed image  | 135°                      |
+| `final_model_8.h5`  | Trained on Gabor-transformed image  | 157.5°                    |
+
+These models are used during inference for **ensemble prediction** via decision fusion, aggregating the outputs of all 9 models to produce the final classification result.
+
+---
+
 ## 📈 Results
 
 | Model              | Accuracy | Precision | Recall | F1-Score |
